@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Expense Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Task & Expense Manager</h1>
+        <div class="cards">
+            <div class="card" onclick="window.location.href='tasks.html'">
+                <div class="card-icon">📝</div>
+                <h2>Task Manager</h2>
+                <p>Organize your tasks efficiently with our modern task management system. Set priorities, assign tasks, and track progress with ease.</p>
+                <a href="tasks.html" class="btn">Open Task Manager</a>
+            </div>
+            <div class="card" onclick="window.location.href='expenses.html'">
+                <div class="card-icon">💰</div>
+                <h2>Expense Tracker</h2>
+                <p>Keep track of your expenses, manage shared costs, and maintain clear financial records between roommates.</p>
+                <a href="expenses.html" class="btn">Open Expense Tracker</a>
+            </div>
+            <div class="card" onclick="window.location.href='inventory.html'">
+                <div class="card-icon">📦</div>
+                <h2>Inventory Manager</h2>
+                <p>Track your inventory, manage purchases and sales of goods, monitor stock levels, and view transaction history.</p>
+                <a href="inventory.html" class="btn">Open Inventory Manager</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

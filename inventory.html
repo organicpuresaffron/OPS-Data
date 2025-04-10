@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Manager</h1>
+        <div class="inventory-section">
+            <div class="inventory-totals">
+                <div class="total-card">
+                    <h3>Total Stock Value</h3>
+                    <div id="totalStockValue" class="total-amount">₹0.00</div>
+                </div>
+                <div class="total-card">
+                    <h3>Total Sales</h3>
+                    <div id="totalSales" class="total-amount">₹0.00</div>
+                </div>
+                <div class="total-card">
+                    <h3>Total Purchases</h3>
+                    <div id="totalPurchases" class="total-amount">₹0.00</div>
+                </div>
+            </div>
+
+            <div class="landing-cards">
+                <div class="landing-card" id="purchaseCard">
+                    <h2>Purchase Management</h2>
+                    <p>Add new purchases and track purchase history</p>
+                    <button class="card-btn" onclick="showSection('purchase')">Manage Purchases</button>
+                </div>
+
+                <div class="landing-card" id="saleCard">
+                    <h2>Sales Management</h2>
+                    <p>Record new sales and view sales history</p>
+                    <button class="card-btn" onclick="showSection('sale')">Manage Sales</button>
+                </div>
+            </div>
+
+            <div class="transaction-sections" id="purchaseSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Purchase Management</h2>
+                    <button class="back-btn" onclick="showLanding()">Back to Dashboard</button>
+                </div>
+                <div class="purchase-section">
+                    <h3>Add Purchase</h3>
+                    <div class="input-section">
+                        <input type="text" id="purchaseBillNumber" placeholder="Bill number...">
+                        <input type="text" id="purchaseCustomerName" placeholder="Customer name...">
+                        <input type="text" id="purchaseBatchNumber" placeholder="Batch number...">
+                        <input type="text" id="purchaseItemName" placeholder="Item name...">
+                        <input type="number" id="purchaseItemQuantity" placeholder="Quantity" min="1" step="1">
+                        <input type="number" id="purchaseItemPrice" placeholder="Price per unit" min="0" step="0.01">
+                        <input type="date" id="purchaseDate">
+                        <button id="addPurchase">Add Purchase</button>
+                    </div>
+                    <div class="transactions-table">
+                        <h3>Purchase History</h3>
+                        <table id="purchaseTable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Bill Number</th>
+                                    <th>Customer Name</th>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="stock-table">
+                    <h3>Current Stock</h3>
+                    <table id="stockTable">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th>Total Value</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="transaction-sections" id="saleSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Sales Management</h2>
+                    <button class="back-btn" onclick="showLanding()">Back to Dashboard</button>
+                </div>
+                <div class="sale-section">
+                    <h3>Add Sale</h3>
+                    <div class="input-section">
+                        <input type="text" id="saleBillNumber" placeholder="Bill number...">
+                        <input type="text" id="saleCustomerName" placeholder="Customer name...">
+                        <input type="text" id="saleItemName" placeholder="Item name...">
+                        <input type="number" id="saleItemQuantity" placeholder="Quantity" min="1" step="1">
+                        <input type="number" id="saleItemPrice" placeholder="Price per unit" min="0" step="0.01">
+                        <input type="date" id="saleDate">
+                        <button id="addSale">Add Sale</button>
+                    </div>
+                    <div class="transactions-table">
+                        <h3>Sales History</h3>
+                        <table id="saleTable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Bill Number</th>
+                                    <th>Customer Name</th>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="stock-table">
+                    <h3>Current Stock</h3>
+                    <table id="stockTable-sale">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th>Total Value</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="inventory.js" type="module"></script>
+</body>
+</html>
